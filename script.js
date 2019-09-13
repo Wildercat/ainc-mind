@@ -101,11 +101,10 @@ function page4() {
     }
     
 
-    let h1 = 'NUMBERLIST';
     let bText = 'Reveal';
     let p1 = 'Find your new number. Note the symbol beside the number.';
     state++
-    post(h1,bText,p1,true,uList);     
+    post('',bText,p1,true,uList);     
 }
 
 function page5() {

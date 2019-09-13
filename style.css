@@ -1,4 +1,15 @@
+#parent {
+    text-align: center;
+}
 #reader {
-    width: 200px;
-    align-self: center;
+    display: inline-block;
+    background-color: aquamarine;
+    width: 300px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    padding: 1em;
+}
+ul {
+    list-style-type: none;
 }

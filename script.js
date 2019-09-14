@@ -1,6 +1,8 @@
 var state = 0;
 var states = [0,1,2,3,4,5];
 var reader = document.getElementById('reader');
+var symbolList = ['!','@','#','$','%','^','*','+','&'];
+var symbolAns = '';
 
 function post(h1,bText,p1, symbBoolean, symb) {
     //Clear the div
@@ -49,6 +51,7 @@ function checkState() {
 }
 
 function page0() {
+    symbolAns = '';
     let h1 = 'I can read your mind.';
     let bText = 'Begin';
     state = 1;
@@ -88,10 +91,11 @@ function page4() {
     //print out the numbers with random symbols attached to them
     //wow I should have done this with the ordered list tag
     var uList = document.createElement('ul');
+    symbolAns = symbolList[Math.floor(Math.random() * symbolList.length)];
     for (let i = 0; i < 100; i++) {
         if (numList[i] % 9 == 0) {
             let li9 = document.createElement('li');
-            li9.textContent = numList[i] + ': &';
+            li9.textContent = numList[i] + ': ' + symbolAns;
             uList.appendChild(li9);
         } else {
             let li = document.createElement('li');
@@ -108,7 +112,7 @@ function page4() {
 }
 
 function page5() {
-    let h1 = '&';
+    let h1 = symbolAns;
     let bText = 'Reset';
     let p1 = 'Was this your symbol?';
     state++
@@ -117,8 +121,12 @@ function page5() {
 
 //returns a random symbol
 function rSymbol() {
-    let symbolList = ['!','@','#','$','%','^','*','+'];
-    return symbolList[Math.floor(Math.random() * symbolList.length)];
+    do {
+        var randResult = symbolList[Math.floor(Math.random() * symbolList.length)];
+        console.log(randResult);
+    }
+    while (randResult == symbolAns);
+    return randResult
 }
 
 

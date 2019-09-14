@@ -82,7 +82,7 @@ function page3() {
 function page4() {
     //make a list of numbers 1-100
     var numList = [];
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 0; i <= 100; i++) {
         numList.push(i);
     }
     //print out the numbers with random symbols attached to them

@@ -31,7 +31,7 @@ function post(h1,bText,p1, symbBoolean, symb) {
     
     
 }
-
+/*
 function checkState() {
     if (state == 0) {
         page0();
@@ -49,7 +49,32 @@ function checkState() {
         page0();
     }
 }
+*/
 
+function checkState() {
+    switch (state) {
+        case 0:
+            page0();
+            break;
+        case 1:
+            page1();
+            break;
+        case 2:
+            page2();
+            break;
+        case 3:
+            page3();
+            break;
+        case 4:
+            page4();
+            break;
+        case 5:
+            page5();
+            break;
+        default:
+            page0();
+    }
+}
 function page0() {
     symbolAns = '';
     let h1 = 'I can read your mind.';

@@ -160,7 +160,7 @@ function page5() {
 function rSymbol() {
     do {
         var randResult = symbolList[Math.floor(Math.random() * symbolList.length)];
-        console.log(randResult);
+        //console.log(randResult);
     }
     while (randResult == symbolAns);
     return randResult

@@ -3,10 +3,22 @@ var states = [0,1,2,3,4,5];
 var reader = document.getElementById('reader');
 var symbolList = ['!','@','#','$','%','^','*','+','&'];
 var symbolAns = '';
+var pageList = [
+    'Blank Page',
+    'First Page',
+    'Pick a Number',
+    'Add Both Together',
+    'Subtract from Original',
+    'List of Numbers and Symbols',
+    'Display Answer Symbol',
+]
 
 function post(h1,bText,p1, symbBoolean, symb) {
     //Clear the div
     reader.innerHTML = '';
+
+    //print the name of current page
+    console.log('Current Page: ' + pageList[state])
 
     let newH1 = document.createElement('h1');
     newH1.textContent = h1;
@@ -148,7 +160,7 @@ function page5() {
 function rSymbol() {
     do {
         var randResult = symbolList[Math.floor(Math.random() * symbolList.length)];
-        console.log(randResult);
+        //console.log(randResult);
     }
     while (randResult == symbolAns);
     return randResult
